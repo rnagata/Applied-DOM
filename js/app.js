@@ -98,6 +98,9 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
 
+  btn4.addEventListener('click', function(event){
+    setMyLightClass.apply(this, event, 'light-green');
+  })
 
   /*
    * Add a click event listener to btn5
@@ -110,6 +113,7 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
 
+  btn5.addEventListener('click', (event) => setMyLightClass.apply(btn5, event, 'light-green'));
 
   /*
    * Add a click event listener to btn6
@@ -120,6 +124,9 @@
    * to set the context to the correct object (the current context)
    */
 
+  btn6.addEventListener('click', function(){
+    setMyLightGreen.call(this);
+  })
 
   /*
    * Add a click event listener to btn7
