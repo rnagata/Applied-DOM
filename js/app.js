@@ -67,7 +67,7 @@
 
   btn1.addEventListener('click', function(){
     setMyLightGreen.apply(this);
-  })
+  });
 
   /*
    * Add a click event listener to btn2
@@ -100,7 +100,7 @@
 
   btn4.addEventListener('click', function(event){
     setMyLightClass.apply(this, event, 'light-green');
-  })
+  });
 
   /*
    * Add a click event listener to btn5
@@ -126,7 +126,7 @@
 
   btn6.addEventListener('click', function(){
     setMyLightGreen.call(this);
-  })
+  });
 
   /*
    * Add a click event listener to btn7
@@ -152,7 +152,7 @@
 
   btn8.addEventListener('click', function(event){
     setMyLightClass.call(this, event, 'light-green');
-  })
+  });
 
   /*
    * Add a click event listener to btn9
@@ -185,7 +185,7 @@
 
   btn10.addEventListener('click', function(){
     setLight10Green();
-  })
+  });
 
   /*
    * Declare a new const named setLight11Green
@@ -196,6 +196,7 @@
    *     null, 'light-green'
    */
 
+  const setLight11Green = setMyLightClass.bind(btn11, null, 'light-green');
 
   /*
    * Add a click event listener to btn11
@@ -204,6 +205,9 @@
    * will invoke the setLight11Green function
    */
 
+  btn11.addEventListener('click', function(){
+    setLight11Green();
+  });
 
   /*
    * Declare a new const named setLight12Class
@@ -212,6 +216,7 @@
    * to set the context to the btn12 object
    */
 
+  const setLight12Class = setMyLightClass.bind(btn12);
 
   /*
    * Add a click event listener to btn12
@@ -223,6 +228,9 @@
    *     event, 'light-green'
    */
 
+  btn12.addEventListener('click', function(event){
+    setLight12Class(event, 'light-green');
+  });
 
   /*
    * Add a click event listener to btn13
@@ -238,6 +246,9 @@
    *     event, 'light-green'
    */
 
+  btn13.addEventListener('click', function(event){
+    setMyLightClass.bind(this)(event, 'light-green');
+  });
 
   /*
    * Add a click event listener to btn14
@@ -246,6 +257,7 @@
    * on the setMyLightGreen function
    */
 
+  btn14.addEventListener('click', setMyLightGreen.bind(btn14));
 
   /*
    * Add a click event listener to btn15
@@ -255,5 +267,6 @@
    * Hint: Do not declare a new function expression as an event handler.
    */
 
+  btn15.addEventListener('click', setMyLightClass.bind(btn15));
 
 }(window));
